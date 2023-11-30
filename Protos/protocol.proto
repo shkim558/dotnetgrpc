@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+option csharp_namespace = "DotNetGrpc";
+
+package protocol_pb;
+
+enum eLoginType { // 로그인 플랫폼 종류 enum
+	DEV = 0;
+	KAKAO = 1;
+	FACEBOOK = 2;
+	GOOGLE = 3;
+	APPLE = 4;
+	GUEST = 5;
+}
+
+enum eDeviceType { // 로그인 디바이스 타입 enum
+	IOS = 0;
+	AOS = 1;
+	PC = 2;
+	EMUL = 3;
+	ETC = 4;
+}
+
+message LoginReq {
+    string player_id = 1;
+    string access_token = 2;
+    eLoginType type = 3;
+    int32 app_id = 4; // 카카오 app_id
+    eDeviceType device_type = 5;
+    string device_model = 6;
+    string country = 7;
+    string market = 8;
+    string region = 9; // KR, ASIA, US, JP 중 하나
+}
+
+message LoginRes {
+    string player_id = 1;
+    int32 type = 2;
+}
+
+service Login {
+	rpc Login (LoginReq) returns (LoginRes);
+}

@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "Nh6caTt185j+btfTBfQnQI5io4A4gUeVEMxi+lOFoPI=",
+  "Source": "DotNetGrpc",
+  "BasePath": "_content/DotNetGrpc",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
